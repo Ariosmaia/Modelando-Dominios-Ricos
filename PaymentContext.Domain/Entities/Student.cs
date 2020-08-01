@@ -18,6 +18,7 @@ namespace PaymentContext.Domain.Entities
             Email = email;
             _subscriptions = new List<Subscription>();
 
+            // agrupa todos os erros
             AddNotifications(name, document, email);
         }
 
@@ -27,6 +28,7 @@ namespace PaymentContext.Domain.Entities
         public Address Address { get; private set; }
         public IReadOnlyCollection<Subscription> Subscriptions { get { return _subscriptions.ToArray();  } }
 
+        // regra de negocio
         public void AddSubscription(Subscription subscription)
         {
             var hasSubscriptionActive = false;

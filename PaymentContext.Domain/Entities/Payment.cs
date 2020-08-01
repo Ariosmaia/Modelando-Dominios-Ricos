@@ -5,6 +5,7 @@ using System;
 
 namespace PaymentContext.Domain.Entities
 {
+    // abstract para não instanciar um pagamento direto
     public abstract class Payment : Entity
     {
         protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, string payer, Document document, Address address, Email email)
